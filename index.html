@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chart.js</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+  <canvas id="aqui"></canvas>
+  <canvas id="alla"></canvas>
+
+  <p>Más información en 
+    <a href="https://www.chartjs.org/docs/latest/getting-started/" target="_blank">Chart.js</a>, 
+    y otro gráfico <a href="page.html">por acá</a>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    new Chart("aqui", {
+      type: "bar",
+      data: {
+        labels: ['La Paz', 'Ciudad de México', 'Buenos Aires', 'Lima', 'Bogotá', 'Santiago de Chile'],
+        datasets: [{
+          label: "Cantidad de lectores de 18 años en cada capital latinoamericana",
+          data: [2300000, 6500000, 1039103994, 10339039, 24983489, 230920392],
+          backgroundColor: [
+      'rgba(250, 175, 10, 0.2)',
+      'rgba(240, 170, 30, 0.2)',
+      'rgba(230, 160, 40, 0.2)',
+      'rgba(225, 155, 50, 0.2)',
+      'rgba(220, 150, 70, 0.2)',
+      'rgba(220, 100, 80, 0.2)',
+    ],
+   borderColor: [
+  'rgb(255, 0, 0)',     
+  'rgb(0, 128, 0)',     
+  'rgb(0, 0, 255)',     
+  'rgb(255, 215, 0)',   
+  'rgb(255, 105, 180)',
+  'rgb(0, 206, 209)',   
+],
+
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {beginAtZero: true }
+        }
+      }
+    });
+
+
+  </script>
+
+   <script>
+new Chart("alla", {
+  type: "line",
+  data: {
+    labels: ['Londres', 'Berlín', 'Roma', 'Madrid', 'Toronto', 'Sídney'],
+    datasets: [
+      {
+        label: "Autos en las Ciudades",
+        data: [1500000, 1200000, 900000, 1100000, 800000, 600000],
+        borderWidth: 2,
+        borderColor: "orange",
+      },
+      {
+        label: "Bicicletas en las Ciudades",
+        data: [700000, 500000, 400000, 600000, 350000, 250000],
+        borderWidth: 2,
+        borderColor: "green"
+      }
+    ]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+</script>
